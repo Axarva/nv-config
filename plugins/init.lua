@@ -16,29 +16,25 @@ return {
       end,
    },
 
-   -- Control P
-   ["ctrlpvim/ctrlp.vim"] = {
-      cmd = {
-         "CtrlP",
-         "CtrlPBuffer",
-         "CtrlPMixed"
-      },
-   },
-
-   -- Haskell formatter
-   ["alx741/vim-stylishask"] = {
-      after = "nvim-lspconfig",
-      cmd = {
-         "Stylishask",
-         "StylishaskToggle"
-      },
-   },
-
    -- Discord thing.
    ["andweeb/presence.nvim"] = {
-      after = "nvim-lspconfig",
       config = function()
          require("custom.plugins.smolconfigs").presence()
       end,
    },
+   
+   -- Media file preview
+   ["nvim-telescope/telescope-media-files.nvim"] = {
+      module = "telescope",
+   },
+
+   -- Universal formatter
+    ["jose-elias-alvarez/null-ls.nvim"] = {
+      after = "nvim-lspconfig",
+      config = function()
+         require "custom.plugins.null-ls"
+      end,
+    }
+
+
 }
