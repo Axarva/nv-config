@@ -32,5 +32,13 @@ return {
          "Stylishask",
          "StylishaskToggle"
       },
-   }
+   },
+
+   -- Discord thing.
+   ["andweeb/presence.nvim"] = {
+      after = "nvim-lspconfig",
+      config = function()
+         require("custom.plugins.smolconfigs").presence()
+      end,
+   },
 }

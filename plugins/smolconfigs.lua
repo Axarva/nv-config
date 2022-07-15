@@ -1,3 +1,5 @@
+vim.g.presence_main_image = "file"
+
 local M = {}
 
 M.autotag = function()
@@ -20,6 +22,18 @@ M.shade = function()
       opacity_step = 1,
       exclude_filetypes = { "NvimTree" },
    }
+end
+
+M.presence = function()
+   local present, presence = pcall(require, "presence")
+
+   if not present then
+      return
+   end
+
+   presence:setup({
+      main_image = "file",
+   })
 end
 
 M.autosave = function()
