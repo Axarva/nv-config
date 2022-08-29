@@ -1,4 +1,16 @@
 return {
+  --your custom plugins section
+
+  ['folke/which-key.nvim'] = {
+    disable = false
+  },
+
+  ["neovim/nvim-lspconfig"] = {
+    config = function()
+        require "plugins.configs.lspconfig"
+        require "custom.plugins.lspconfig"
+      end,
+  },
    -- autoclose tags in html, jsx etc
    ["windwp/nvim-ts-autotag"] = {
       ft = { "html", "javascriptreact" },

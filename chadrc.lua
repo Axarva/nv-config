@@ -2,12 +2,6 @@ local M = {}
 
 M.plugins = {
 
-   options = {
-      lspconfig = {
-         setup_lspconf = "custom.plugins.lspconfig",
-      },
-   },
-
    override = {
       ["nvim-telescope/telescope.nvim"] = {
           extensions = {
@@ -22,6 +16,10 @@ M.plugins = {
 
    user = require "custom.plugins",
 
+}
+
+M.ui = {
+  theme = "aquarium",
 }
 
 M.mappings = require "custom.mappings"
